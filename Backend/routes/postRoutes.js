@@ -1,18 +1,29 @@
-import express from 'express'
-import { addPost, getPosts, deletePost, updatePost } from '../controllers/postController.js';
+import express from "express";
+import {
+  getPosts,
+  getUserPosts,
+  addPost,
+  deletePost,
+  updatePost,
+} from "../controllers/postsController.js";
+import auth from "../middlewares/auth.js";
 
+// Creating an instance of Express router
 const router = express.Router();
 
-// GET ALL POST
-router.get('/', getPosts )
+// Get all posts route
+router.get("/", getPosts);
 
-// ADD A NEW POST
-router.post('/', addPost )
+// Get user's posts route
+router.get("/user", auth, getUserPosts);
 
-// DELETE A POST
-router.delete('/:id', deletePost )
+// Add new post route
+router.post("/", auth, addPost);
 
-// UPDATE A POST
-router.put('/:id', updatePost)
+// Delete post route
+router.delete("/:id", auth, deletePost);
 
-export {router as postRoutes}
+// Update post route
+router.put("/:id", auth, updatePost);
+
+export { router as postsRoutes };

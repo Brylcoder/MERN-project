@@ -1,6 +1,12 @@
 import mongoose from "mongoose";
 
+// Creating post schema using Mongoose Schema class
 const PostSchema = new mongoose.Schema({
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: "User"
+    },
     title: {
         type: String,
         required: true,
@@ -9,8 +15,10 @@ const PostSchema = new mongoose.Schema({
         type: String,
         required: true,
     }
-}, {timestamps: true})
+}, { timestamps: true })
 
-const Post = mongoose.model('Post', PostSchema)
+
+// Creating a model from schema
+const Post = mongoose.model("Post", PostSchema)
 
 export default Post
