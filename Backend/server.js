@@ -1,7 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
-import { postsRoutes } from "./routes/postsRoutes.js";
-import { usersRoutes } from "./routes/usersRoutes.js";
+import { postsRoutes } from "./routes/postRoutes.js";
+import { usersRoutes } from "./routes/userRoutes.js";
 
 // Initializing Express app
 const app = express();

@@ -5,7 +5,7 @@ import {
   addPost,
   deletePost,
   updatePost,
-} from "../controllers/postsController.js";
+} from "../controllers/postController.js";
 import auth from "../middlewares/auth.js";
 
 // Creating an instance of Express router

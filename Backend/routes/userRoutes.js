@@ -1,5 +1,5 @@
 import express from 'express'
-import { registerUser, loginUser } from '../controllers/usersController.js'
+import { registerUser, loginUser } from '../controllers/userController.js'
 
 // Creating an instance of Express router
 const router = express.Router()
